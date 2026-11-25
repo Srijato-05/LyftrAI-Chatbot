@@ -1,0 +1,35 @@
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+
+# Databases & caches
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+llm_cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node / Frontend
+node_modules/
+frontend/dist/
+dist/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+
+# Assignment spec & internal planning docs
+Documentation/
+
