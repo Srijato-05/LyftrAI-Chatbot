@@ -8,13 +8,13 @@ An end-to-end, containerized **multi-turn LLM Chatbot** engineered for **determi
 
 | Resource | URL | Notes |
 |---|---|---|
-| **Frontend (Vercel)** | `https://<your-frontend>.vercel.app` | Public React SPA connected to live backend |
-| **Backend (Railway)** | `https://<your-backend>.up.railway.app` | Docker container with persistent `/data` volume |
-| **Backend Health Check** | `https://<your-backend>.up.railway.app/health` | Returns `200 {"status":"ok","keys_configured":2,"cache_enabled":true}` |
-| **Public GitHub Repository** | `https://github.com/<your-username>/<your-repo>` | Full source, tests, Dockerfiles, Compose, Makefile |
-| **Demo Video (2–3 min)** | `https://<your-video-link>` | Narrated walkthrough of UI, caching, failover & endpoints |
+| **Frontend (Vercel)** | https://lyftr-ai-chatbot-pearl.vercel.app | Public React SPA connected to live backend |
+| **Backend (Railway)** | https://lyftrai-chatbot-production.up.railway.app | Docker container with persistent `/data` volume |
+| **Backend Health Check** | https://lyftrai-chatbot-production.up.railway.app/health | Returns `200 {"status":"ok","keys_configured":2,"cache_enabled":true}` |
+| **Public GitHub Repository** | https://github.com/Srijato-05/LyftrAI-Chatbot | Full source, tests, Dockerfiles, Compose, Makefile |
+| **Demo Video (2–3 min)** | `TBD — add 2–3 min demo video link` | Narrated walkthrough of UI, caching, failover & endpoints |
 
-> **Deployment Note:** Replace the placeholder `<your-...>` URLs above right after deploying Railway and Vercel. Ensure `ENABLE_FAILURE_SIMULATION=true` and `ALLOWED_ORIGINS` includes the live Vercel origin.
+> **Deployment Config:** Backend runs on Railway with `ENABLE_FAILURE_SIMULATION=true`, `/data` persistent volume, and `ALLOWED_ORIGINS` allowing `https://lyftr-ai-chatbot-pearl.vercel.app`.
 
 ---
 
@@ -345,7 +345,7 @@ Runs end-to-end checks for `/health`, `LIVE_INFERENCE`, `LLM_CACHE` hit + latenc
 ```powershell
 # PowerShell (against local Docker or deployed Railway URL)
 .\scripts\smoke.ps1 -Base http://localhost:8000
-.\scripts\smoke.ps1 -Base https://<your-backend>.up.railway.app
+.\scripts\smoke.ps1 -Base https://lyftrai-chatbot-production.up.railway.app
 ```
 ```bash
 # Bash
